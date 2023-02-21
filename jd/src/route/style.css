@@ -1,0 +1,196 @@
+img {
+  display: block;
+  width: 500px;
+  margin-left: auto;
+  
+  margin-top: 50px;
+  height: 300px;
+}
+    .navbar{
+        
+        background-color: #f3ecec;
+        
+       
+        
+    }
+    .navbar ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .navbar li{
+        float:left;
+        margin-left: 100px;
+        list-style: none; 
+        font-family:'Franklin Gothic Medium';
+        font-size: 35px;
+        margin: 0px 0px;
+        
+    }
+
+    .navbar li a{
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        
+    }
+    .navbar li a:hover{
+        color: #0a0a0a;
+        
+    }
+   button
+   {
+    
+    margin-top: 8px;
+    margin-right: 40px;
+    border-radius: 6px;
+    height: 50px;
+    width: 100px;
+    border: 1px solid rgb(73, 71, 71) ;
+    font-size: 20px;
+    font-family: Franklin Gothic Medium;
+   }
+   .pss
+   {
+    font-size: 25px;
+    margin-top: 140px;
+    text-align: center;
+    font-family:Franklin Gothic Medium ;
+   }
+
+   .la{
+    color: black;
+    margin-left: 16px;
+
+   }
+   .bg
+   {
+    background-color: #fcf7f7;
+    width: 100%;
+    height: auto;
+   }
+   .size{
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+   }
+
+   .subsize
+   {
+    font-size: 25px;
+    margin-left: 120px;
+    height: 40px;
+   }
+
+   .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  .columna {
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+ 
+  .row {
+    display: flex;
+  }
+
+  .tab {
+    border:#0a0a0a
+  }
+  table{
+    margin-top: 100px;
+  }
+
+  table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+  border: 4px solid white;
+  border-collapse: collapse;
+  align-items: center;  
+  width: 800px;
+  font-size: 20px;
+  font-family: Franklin Gothic Medium;
+  }
+  th, td{
+    background-color: #f3ecec;
+  }
+  tr{
+    text-align: center;
+    height: 80px;
+  }
+  th{
+    box-sizing: 20px;
+  }
+  .buts{
+  margin-left: 30px;
+  }
+  .butss{
+    height: 40px;
+    margin-left: 30px;
+  }
+  ::placeholder {
+    font-family: Franklin Gothic Medium;
+   
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+ 
+  
+  .columns {
+    margin-left: 70px;
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  .rows {
+    margin: 0 -5px;}
+ 
+  .rowss {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+ 
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  h3{
+    font-size: 20px;
+  font-family: Franklin Gothic Medium;
+  }
+ 
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    
+    background-color: #f1f1f1;
+    height: 200px;
+    margin-bottom: 40px;
+  }
+  .ps{
+    font-size: 20px;
+  font-family: Franklin Gothic Medium;
+  }
