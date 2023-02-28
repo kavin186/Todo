@@ -18,7 +18,7 @@ export default function C1()
    const [cntask, setNcomptask] = useState([])
   
   useEffect(()=>{
-    axios.get("http://localhost:3000/tasks/")
+    axios.get(`https://${process.env.REACT_APP_APP_URL}/tasks`)
      .then((response) => {
       setData(response.data)
       setComptask(taskData.filter((task)=>{return task.completed === true}))
@@ -33,20 +33,20 @@ export default function C1()
     
      alert("Task have been submitted successfully");
     axios.all([
-      await axios.post("http://localhost:3000/task/" ,{ name:name,task: task})
+      await axios.post(`http://${process.env.REACT_APP_APP_URL}/task/` ,{ name:name,task: task})
      .then((data) => {
       console.log(data);
               setName("")
               setTask("")
        }).then(() =>{
 
-     axios.get("http://localhost:3000/tasks/")
+     axios.get(`http://${process.env.REACT_APP_APP_URL}/tasks/`)
      .then((response) => {
-      console.log("hello",response);
       setData(response.data)
        })})
       ])
       }
+      
  
   
   
@@ -81,73 +81,6 @@ export default function C1()
           </p>
           </div>
           </div>
-          <table>
-          <thead>
-              <tr>
-                <th>Name</th>
-                <th>Task</th>
-                <th>Completed</th>
-                <th>Delete</th>
-              </tr>
-          </thead>
-          <tbody>
-        
-          {cntask.map((data)=>(
-              <tr>
-                <td>{data.name}</td>
-                <td>{data.task}</td>
-                <td className="buts"><button className="butss" onClick={ () =>{
-                axios.patch(`http://localhost:3000/task/${data.id}`)
-                alert("Task have been updated successfully")}
-                }>
-                  Update</button></td>
-
-                <td className="buts"><button className="butss" onClick={ () =>{
-                axios.delete(`http://localhost:3000/delete/${data.id}`)
-                alert("Task have been deleted successfully")}
-                }>  
-                  Delete</button></td>
-              </tr>
-          ))}
-              
-          </tbody>
-
-          </table>
-          
-
-
-          <table>
-          <thead>
-              <tr>
-                <th>Name</th>
-                <th>Task</th>
-                <th>Completed</th>
-                <th>Delete</th>
-              </tr>
-          </thead>
-          <tbody>
-        
-          {ctask.map((data)=>(
-              <tr>
-                <td>{data.name}</td>
-                <td>{data.task}</td>
-                <td>Completed</td>
-
-                <td className="buts"><button className="butss" onClick={ () =>{
-                axios.delete(`http://localhost:3000/delete/${data.id}`)
-                alert("Task have been deleted successfully")
-                }
-                }>  
-                  Delete</button></td>
-              </tr>
-          ))}
-              
-          </tbody>
-
-          </table>
-
-        
-      
       </div>
 
     );

@@ -4,9 +4,9 @@ const app = express()
 
 const cors = require("cors");
  
-app.options("*", cors({ origin: 'http://localhost:3001', optionsSuccessStatus: 200 }));
+app.options("*", cors({optionsSuccessStatus: 200 }));
 
-app.use(cors({ origin: 'http://localhost:3001', optionsSuccessStatus: 200 }));
+app.use(cors({optionsSuccessStatus: 200 }));
 
 app.use(express.json());
 
@@ -20,8 +20,9 @@ const mongodb = require('mongodb')
 app.use(express.json())
 mongoose.set('strictQuery' ,false);
 
- mongoose.connect('mongodb://127.0.0.1:27017/first',
+ mongoose.connect('mongodb://database:27017/first',
  {
+    directConnection: true,
     useNewUrlParser : true,
     useUnifiedTopology : true
  })
@@ -59,8 +60,8 @@ app.get('/tasks',async(req,res)=>{
 
   try{
     const result = await coll.find().toArray();
+    console.log("results",result)
     res.send(result)
-    console.log(result)
     }
     catch (error)
     {
@@ -79,8 +80,9 @@ app.post('/task',async (req,res)=>{
     completed : false,
     completed_at : ""
   }
-  coll.insertOne(tasker)
+  await coll.insertOne(tasker)
   console.log("Inserted Successfully")
+  res.status(200).send("inserted...")
 }
    catch (error){
     res.status(400).send("fail")
@@ -109,19 +111,20 @@ app.post('/task',async (req,res)=>{
 
 
 
-app.patch('/task/:id',async(req,res)=>{
-  const taskId = req.params.id
+// app.patch('/task/:id',async(req,res)=>{
+//   const taskId = req.params.id
 
-  try{
-    const filter  = {id : taskId}
-    const newValues = {$set:{completed : true,completed_at : new Date().toLocaleString()}};
-    await db.collection("task").updateOne(filter,newValues)
-    } 
-    catch(error)
-    {
-    throw error
-    }
-});
+//   try{
+//     const filter  = {id : taskId}
+//     const newValues = {$set:{completed : true,completed_at : new Date().toLocaleString()}};
+//     await db.collection("task").updateOne(filter,newValues)
+//     res.status(200).send("updated...")
+//     } 
+//     catch(error)
+//     {
+//     throw error
+//     }
+// });
 
 
 
@@ -150,16 +153,17 @@ app.patch('/task/:id',async(req,res)=>{
 
 
 
-app.delete('/delete/:id',async (req,res)=>{
-const taskIds = req.params.id
-const filters  = {id : taskIds}
-try{
-  db.collection("task").deleteOne(filters)
-} 
-catch(error){
-  throw error
-}
-})
+// app.delete('/delete/:id',async (req,res)=>{
+// const taskIds = req.params.id
+// const filters  = {id : taskIds}
+// try{
+//   db.collection("task").deleteOne(filters)
+
+// } 
+// catch(error){
+//   throw error
+// }
+// })
 
 
 
@@ -193,9 +197,9 @@ catch(error){
 //     }
 
 
-app.listen(3000,function()
+app.listen(8000,function()
 {
-    console.log('App listening on port 3000')
+    console.log('App listening on port 8000')
 })
 
 

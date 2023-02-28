@@ -13,7 +13,7 @@ export default function C2()
     const [taskData,setData] = useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/tasks/")
+        axios.get(`http://${process.env.REACT_APP_APP_URL}/tasks/`)
          .then((response) => {
           setData(response.data)
            });
