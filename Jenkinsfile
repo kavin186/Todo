@@ -11,7 +11,8 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t kavin22/repository_one:backend .'
+				sh 'docker build -f frontend/Dockerfile -t kavin22/repository_one:frontend .'
+                sh 'docker build -f backend/Dockerfile -t kavin22/repository_one:backend .'
 			}
 		}
 
@@ -25,7 +26,8 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push kavin22/repository_one:backend '
+				sh 'docker push kavin22/repository_one:frontend '
+                sh 'docker push kavin22/repository_one:backend '
 			}
 		}
 	}
