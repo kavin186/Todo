@@ -5,10 +5,22 @@ pipeline {
         
         stage('Build Docker image') {
         steps {
+            sh 'pwd'
+            sh 'ls'
             dir('frontend'){
+<<<<<<< HEAD
                 sh 'docker build -t kavin22/frontend:v1.0 .'
             }
             dir('backend'){
+=======
+                sh 'pwd'
+                sh 'ls'
+                sh 'docker build -t kavin22/frontend:v1.0 .'
+            }
+            dir('backend'){
+                sh 'pwd'
+                sh 'ls'
+>>>>>>> 0a5b50c32b7493280e393a74092387716757ecc1
                 sh 'docker build -t kavin22/backend:v1.0 .'
             }
                 
