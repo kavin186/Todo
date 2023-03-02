@@ -9,8 +9,13 @@ pipeline {
         }
         stage('Build Docker image') {
         steps {
-                sh 'docker build -f frontend/Dockerfile -t kavin22/repository_one:frontend .'
-                sh 'docker build -f backend/Dockerfile -t kavin22/repository_one:backend .'
+            dir('frontend'){
+                sh 'docker build  -t kavin22/repository_one:frontend .'
+            }
+            dir('backend'){
+                sh 'docker build  -t kavin22/repository_one:backend .'
+            }
+                
             }
         }
         stage('Push Docker image') {
