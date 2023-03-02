@@ -8,12 +8,12 @@ pipeline {
             dir('frontend'){
                 sh 'pwd'
                 sh 'ls'
-                sh 'docker build  -t kavin22/repository_one:frontend .'
+                sh 'docker build -t kavin22/frontend:v1.0 .'
             }
             dir('backend'){
                 sh 'pwd'
                 sh 'ls'
-                sh 'docker build  -t kavin22/repository_one:backend .'
+                sh 'docker build -t kavin22/backend:v1.0 .'
             }
                 
             }
