@@ -6,9 +6,13 @@ pipeline {
         stage('Build Docker image') {
         steps {
             dir('frontend'){
+                sh 'pwd'
+                sh 'ls'
                 sh 'docker build  -t kavin22/repository_one:frontend .'
             }
             dir('backend'){
+                sh 'pwd'
+                sh 'ls'
                 sh 'docker build  -t kavin22/repository_one:backend .'
             }
                 
