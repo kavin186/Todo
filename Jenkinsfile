@@ -8,6 +8,13 @@ pipeline{
 
 	stages {
 
+        stage('Git Checkout'){
+
+        steps{
+                git branch: 'main', credentialsId: '54fa4530-c347-42db-91dd-d776232b5ab8', url: 'https://github.com/Kavin-bootlabs/cicd_demo.git'
+            }
+        }
+
 		stage('Build') {
 
 			steps {
@@ -26,6 +33,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
+                
 				sh 'docker push kavin22/repository_one:frontend '
                 sh 'docker push kavin22/repository_one:backend '
 			}
