@@ -1,6 +1,8 @@
 pipeline{
 
-	agent any
+	agent{      
+    node { label 'slavefordocker'}     
+  }
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker-psw')
