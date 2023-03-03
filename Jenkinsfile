@@ -34,6 +34,16 @@ pipeline{
 			}
 		}
 
+		stage('pull'){
+			
+			agent{
+				label 'slave-jenkins-1'
+			}
+			steps{
+				sh 'docker pull kavin22/repository_one:frontend'
+			}
+		}
+
 		stage('Push') {
 
 			steps {
