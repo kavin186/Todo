@@ -50,7 +50,7 @@ pipeline{
 				label 'slaveNode1'
 			}
 			steps{
-				sh 'docker pull kavin22/repository_one:backend'
+				sh 'sudo docker pull kavin22/repository_one:backend'
 			}
 		}
 	}
