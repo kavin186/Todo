@@ -51,6 +51,7 @@ pipeline{
 			}
 			steps{
 				sh 'sudo docker pull kavin22/repository_one:backend'
+				sh 'sudo docker pull kavin22/repository_one:frontend'
 			}
 		}
 	}
