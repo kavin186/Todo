@@ -61,7 +61,7 @@ export default function C1()
             </ul>
         </nav> 
          <div className="row">
-          <div className="columna">
+          <div className="column">
             <img src={pro} ></img>
           </div>
           <div className="column">

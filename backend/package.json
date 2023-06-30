@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart":"nodemon index.js"
+    "devstart": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,6 @@
     "mongoose": "^6.9.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.22"
   }
 }

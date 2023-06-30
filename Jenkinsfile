@@ -44,16 +44,16 @@ pipeline{
 			}
 		}
 
-		stage('pull'){
+		//stage('pull'){
 			
-			agent{
-				label 'slaveNode1'
-			}
-			steps{
-				sh 'sudo docker pull kavin22/repository_one:backend'
-				sh 'sudo docker pull kavin22/repository_one:frontend'
-			}
-		}
+		//	agent{
+		//		label 'slaveNode1'
+		//	}
+		//	steps{
+		//		sh 'sudo docker pull kavin22/repository_one:backend'
+		//		sh 'sudo docker pull kavin22/repository_one:frontend'
+		//	}
+		//}
 	}
 
 	post {
